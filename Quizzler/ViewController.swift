@@ -9,9 +9,14 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import Gifu
+
+
 
 
 class ViewController: UIViewController {
+    
+    var firstImageView = GIFImageView()
     
     
     //The UI Elements from the storyboard   are already linked up for you.
@@ -44,7 +49,7 @@ class ViewController: UIViewController {
         updateUI()
         
         
-        signUp()
+      //  signUp()
         
         
         
@@ -109,29 +114,42 @@ class ViewController: UIViewController {
             
         else {
             
-            sendScoreToDB()
+            self.view.isUserInteractionEnabled = false
             
+            reaction()
             
-            let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over? ", preferredStyle: .alert)
-            
-            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { UIAlertAction in
+            let delayInSeconds = 5.0 // 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
                 
-                self.startOver()
+                self.view.isUserInteractionEnabled = true
                 
-            })
-            
-            let showScores = UIAlertAction(title: "View Scores", style: .default, handler:
-                { UIAlertAction in
-            
-                self.performSegue(withIdentifier: "goToScores", sender: self)
+                self.sendScoreToDB()
+                
+                
+                let alert = UIAlertController(title: "Awesome", message: "You've finished all the questions, do you want to start over? ", preferredStyle: .alert)
+                
+                let restartAction = UIAlertAction(title: "Restart", style: .default, handler: { UIAlertAction in
                     
-            })
+                    self.startOver()
+                    
+                })
+                
+                let showScores = UIAlertAction(title: "View Scores", style: .default, handler:
+                { UIAlertAction in
+                    
+                    self.performSegue(withIdentifier: "goToScores", sender: self)
+                    
+                })
+                
+                alert.addAction(showScores)
+                
+                alert.addAction(restartAction)
+                
+                self.present(alert, animated: true, completion: nil)
+                
+            }
             
-            alert.addAction(showScores)
             
-            alert.addAction(restartAction)
-            
-            present(alert, animated: true, completion: nil)
             
         }
         
@@ -144,15 +162,21 @@ class ViewController: UIViewController {
         
         if correctAnswer == pickedAnswer {
 
-            ProgressHUD.showSuccess("Correct!")
+            if  questionNumber <= 12 {
+           ProgressHUD.showSuccess("Correct!")
+                
+            }
             
             self.score = self.score + 1
         }
             
         else {
             
-            ProgressHUD.showError("Wrong!")
+            if questionNumber <= 12 {
+         ProgressHUD.showError("Wrong!") }
         }
+        
+        print(yourScore)
     }
     
     //This method will wipe the board clean, so that users can retake the quiz.
@@ -278,6 +302,68 @@ class ViewController: UIViewController {
         
     }
     
+    func reaction() {
+        
+          self.firstImageView.alpha = 1
+        
+        view.addSubview(firstImageView)
+        firstImageView.frame = view.frame
+        
+        switch score {
+        case 0...6:
+            let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "smh", withExtension: "gif")!)
+            
+            self.firstImageView.animate(withGIFData: imageData)
+            
+            
+        case 7...9:
+            let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "", withExtension: "gif")!)
+            
+            self.firstImageView.animate(withGIFData: imageData)
+            
+        case 10...13:
+            
+            let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "good job", withExtension: "gif")!)
+            
+            self.firstImageView.animate(withGIFData: imageData)
+        default:
+            print("Keep Trying")
+        }
+        
+       
+       
+        
+        view.addSubview(firstImageView)
+        firstImageView.frame = view.frame
+
+//        UIView.animate(withDuration: 6, animations: {
+//
+//
+//
+//
+//
+//            self.firstImageView.alpha = 0
+//
+//
+//        })
+        
+        let delayInSeconds = 5.0 // 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
+            
+            self.firstImageView.alpha = 0
+        }
+        
+        
+
+
+    }
+    
+    
+    
+    
+    
+    
+    
     func fetchData() {
         
         
@@ -318,7 +404,7 @@ class ViewController: UIViewController {
                 
                 
                 
-                dict = [String : Int](uniqueKeysWithValues: dict.sorted{ $0.key < $1.key })
+                dict = [String : Int](uniqueKeysWithValues: dict.sorted{ $1.value < $0.value })
                 print(dict)
                 
                 
@@ -326,8 +412,8 @@ class ViewController: UIViewController {
                 
                             let keysArray = Array(dict.keys)
                 
-               // print(keysArray)
-              //  print(valuesArray)
+               print(keysArray)
+              print(valuesArray)
                 
                             self.yourScore = valuesArray
                 

@@ -178,23 +178,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnq-Cq-T8J">
-                                <rect key="frame" x="123" y="557" width="128" height="56"/>
-                                <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Play Again">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playAgainPressed:" destination="Fwq-kb-E9F" eventType="touchUpInside" id="RWH-FC-uxO"/>
-                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="goToHome" id="HTk-40-MdY"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-KE-Xt1">
-                                <rect key="frame" x="0.0" y="169" width="375" height="328"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIy-KE-Xt1">
+                                <rect key="frame" x="0.0" y="111" width="375" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="328" id="prD-KX-NN3"/>
-                                </constraints>
                                 <color key="separatorColor" red="0.84465640779999995" green="0.51457053419999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -214,24 +200,44 @@
                                     <outlet property="delegate" destination="79C-Zr-1DU" id="UNi-ag-y9r"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Who Knows Them The Best?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-uJ-OGg">
-                                <rect key="frame" x="0.0" y="45" width="375" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Knows Them The Best?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-uJ-OGg">
+                                <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                 <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="4Zv-tF-ucJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnq-Cq-T8J">
+                                <rect key="frame" x="123" y="591" width="128" height="56"/>
+                                <color key="backgroundColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="1NO-lv-xRv"/>
+                                    <constraint firstAttribute="height" constant="56" id="6dB-2v-VIo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgainPressed:" destination="Fwq-kb-E9F" eventType="touchUpInside" id="RWH-FC-uxO"/>
+                                    <segue destination="vXZ-lx-hvc" kind="show" identifier="goToHome" id="HTk-40-MdY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="centerX" secondItem="lnq-Cq-T8J" secondAttribute="centerX" id="0zk-vv-kJZ"/>
-                            <constraint firstItem="lnq-Cq-T8J" firstAttribute="top" secondItem="vIy-KE-Xt1" secondAttribute="bottom" constant="60" id="1eq-Ik-fy8"/>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="centerY" secondItem="PAl-UY-48k" secondAttribute="centerY" id="2Dm-PQ-fbh"/>
-                            <constraint firstAttribute="trailing" secondItem="vIy-KE-Xt1" secondAttribute="trailing" id="7Zw-qp-wXc"/>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="top" secondItem="CIG-uJ-OGg" secondAttribute="bottom" constant="66" id="Cdg-D3-XnN"/>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="trailing" secondItem="CIG-uJ-OGg" secondAttribute="trailing" id="MZm-jU-080"/>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="leading" secondItem="CIG-uJ-OGg" secondAttribute="leading" id="bud-x6-FCr"/>
-                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="leading" secondItem="PAl-UY-48k" secondAttribute="leading" id="mRp-M1-oHQ"/>
+                            <constraint firstItem="CIG-uJ-OGg" firstAttribute="trailing" secondItem="vIy-KE-Xt1" secondAttribute="trailing" id="8ER-SD-xEX"/>
+                            <constraint firstItem="lnq-Cq-T8J" firstAttribute="top" secondItem="vIy-KE-Xt1" secondAttribute="bottom" constant="22" id="9iP-Jc-BTT"/>
+                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="top" secondItem="CIG-uJ-OGg" secondAttribute="bottom" constant="8" symbolic="YES" id="TTf-Ap-LBe"/>
+                            <constraint firstItem="CIG-uJ-OGg" firstAttribute="leading" secondItem="PAl-UY-48k" secondAttribute="leading" id="YUa-Dh-U6v"/>
+                            <constraint firstAttribute="trailing" secondItem="CIG-uJ-OGg" secondAttribute="trailing" id="dFf-f2-5sq"/>
+                            <constraint firstItem="CIG-uJ-OGg" firstAttribute="top" secondItem="xUX-qL-1iT" secondAttribute="bottom" constant="8" symbolic="YES" id="ftc-G8-gg2"/>
+                            <constraint firstAttribute="bottom" secondItem="lnq-Cq-T8J" secondAttribute="bottom" constant="20" symbolic="YES" id="fzC-kC-y98"/>
+                            <constraint firstItem="CIG-uJ-OGg" firstAttribute="leading" secondItem="vIy-KE-Xt1" secondAttribute="leading" id="io8-9U-isc"/>
+                            <constraint firstItem="vIy-KE-Xt1" firstAttribute="centerX" secondItem="lnq-Cq-T8J" secondAttribute="centerX" id="yCM-vb-9gk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Enr-qp-Xd5"/>

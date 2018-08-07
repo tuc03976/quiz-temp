@@ -19,6 +19,9 @@
 		633646C61B8C657400FF45E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 633646C51B8C657400FF45E2 /* Images.xcassets */; };
 		633646C91B8C657400FF45E2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633646C71B8C657400FF45E2 /* LaunchScreen.xib */; };
 		A6970EE320D89E5300016F81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6970EE220D89E5300016F81 /* GoogleService-Info.plist */; };
+		A6D6907C20E4A0300075DBD0 /* good job.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6D6907B20E4A02F0075DBD0 /* good job.gif */; };
+		A6D6907E20E4A03D0075DBD0 /* smh.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6D6907D20E4A03D0075DBD0 /* smh.gif */; };
+		A6D84A3120E4684F0062D714 /* nonstandard.gif in Resources */ = {isa = PBXBuildFile; fileRef = A6D84A3020E4684F0062D714 /* nonstandard.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		633646C51B8C657400FF45E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		633646C81B8C657400FF45E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A6970EE220D89E5300016F81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6D6907B20E4A02F0075DBD0 /* good job.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "good job.gif"; sourceTree = "<group>"; };
+		A6D6907D20E4A03D0075DBD0 /* smh.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = smh.gif; sourceTree = "<group>"; };
+		A6D84A3020E4684F0062D714 /* nonstandard.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = nonstandard.gif; sourceTree = "<group>"; };
 		B70EC45251215037A6EEF732 /* Pods_Quizzler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quizzler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80CCB8E132C9915ADB8278A /* Pods-Quizzler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quizzler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quizzler/Pods-Quizzler.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +115,9 @@
 		EBB1C72B1B946C4B0011F5C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A6D84A3020E4684F0062D714 /* nonstandard.gif */,
+				A6D6907B20E4A02F0075DBD0 /* good job.gif */,
+				A6D6907D20E4A03D0075DBD0 /* smh.gif */,
 				633646C51B8C657400FF45E2 /* Images.xcassets */,
 				633646C21B8C657400FF45E2 /* Main.storyboard */,
 			);
@@ -204,7 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6D6907C20E4A0300075DBD0 /* good job.gif in Resources */,
+				A6D84A3120E4684F0062D714 /* nonstandard.gif in Resources */,
 				630FA7CC1D707CED00178538 /* ProgressHUD.bundle in Resources */,
+				A6D6907E20E4A03D0075DBD0 /* smh.gif in Resources */,
 				633646C41B8C657400FF45E2 /* Main.storyboard in Resources */,
 				A6970EE320D89E5300016F81 /* GoogleService-Info.plist in Resources */,
 				633646C91B8C657400FF45E2 /* LaunchScreen.xib in Resources */,
@@ -223,6 +235,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quizzler/Pods-Quizzler-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -230,6 +243,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
