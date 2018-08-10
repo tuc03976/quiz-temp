@@ -49,6 +49,8 @@ class ViewController: UIViewController {
         updateUI()
         
         
+        
+        
       //  signUp()
         
         
@@ -61,7 +63,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
+print(allQuestions.list)
         
     }
 
@@ -239,7 +241,7 @@ class ViewController: UIViewController {
         
         let a = String(score)
         
-        let scoreDB = Database.database().reference().child("users").child(self.uid).child("score")
+        let scoreDB = Database.database().reference().child("users").child(self.username).child("score")
         
         scoreDB.setValue(a)
         
